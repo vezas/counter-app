@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-.card {
+.form {
   display: flex;
   margin: 5vh 5vw;
 }
 
-.card button {
-  width: 40vw;
+.form button {
+  width: 25vw;
   height: 7.5vh;
   margin: 0 5vw;
   background-color: #7649f5;
   box-shadow: 2px 2px 1px 1px rgba(85, 5, 124, 0.2);
   border: none;
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   font-family: 'Roboto';

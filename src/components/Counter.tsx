@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import Card from '../UI/Card';
 import classes from './Counter.module.css';
 
 const Counter = () => {
@@ -16,14 +17,16 @@ const Counter = () => {
   };
 
   return (
-    <div className={classes.card}>
-      <button type="submit" onClick={increaseValueHandler}>
-        Increase
-      </button>
-      <button type="submit" onClick={decreaseValueHandler}>
-        Decrease
-      </button>
-    </div>
+    <Card>
+      <div className={classes.form}>
+        <button type="submit" onClick={increaseValueHandler}>
+          Increase
+        </button>
+        <button type="submit" onClick={decreaseValueHandler}>
+          Decrease
+        </button>
+      </div>
+    </Card>
   );
 };
 
