@@ -1,7 +1,11 @@
 import React from 'react';
 
-import { CardProps } from '../../interfaces';
-import classes from './Card.module.css';
+import classes from 'components/UI/Card.module.css';
+
+export interface CardProps {
+  className?: string | undefined;
+  children?: React.ReactNode;
+}
 
 const Card: React.FC<CardProps> = (props) => {
   return (
@@ -9,4 +13,5 @@ const Card: React.FC<CardProps> = (props) => {
   );
 };
 
-export default Card;
+// export default Card;
+export { Card };

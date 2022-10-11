@@ -6,7 +6,15 @@
   box-sizing: border-box;
 }
 
+html,
+body,
+#root,
+.app {
+  height: 100%;
+}
+
 html {
+  min-height: 100%;
   font-family: 'Roboto';
   font-size: 10px;
 }

@@ -1,13 +1,19 @@
 import React from 'react';
 
-import { ButtonProps } from '../../interfaces';
-import classes from './Button.module.css';
+import classes from 'components/UI/Button.module.css';
+
+export interface ButtonProps {
+  className?: string;
+  children: React.ReactNode;
+  type: 'button';
+  onChange: () => void | any;
+}
 
 const Button: React.FC<ButtonProps> = (props) => {
   return (
     <button
       type={props.type}
-      onClick={props.onClick}
+      onClick={props.onChange}
       className={classes.button}
     >
       {props.children}
@@ -15,4 +21,4 @@ const Button: React.FC<ButtonProps> = (props) => {
   );
 };
 
-export default Button;
+export { Button };

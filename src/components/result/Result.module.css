@@ -3,7 +3,7 @@
   justify-content: center;
 }
 
-.result div {
+.result__content {
   width: 80vw;
   height: 7.5vh;
   margin: 2vh 5vw;
@@ -15,10 +15,10 @@
   align-items: center;
 }
 
-.result div:nth-of-type(2) {
+.result__content:nth-of-type(2) {
   background-color: rgba(118, 73, 245, 0.1);
 }
 
-.result div:nth-of-type(1) {
+.result__content:nth-of-type(1) {
   transform: scale(0.75);
 }

@@ -1,28 +1,31 @@
 import React, { useEffect, useRef } from 'react';
+import { Card } from 'components/UI/Card';
+import classes from 'components/result/Result.module.css';
 
-import Card from './../UI/Card';
-import { ResultProps } from '../../interfaces';
-import classes from './Result.module.css';
+export interface ResultProps {
+  value: number | null;
+  prevValueRef?: number | null;
+}
 
 const Result: React.FC<ResultProps> = (props) => {
-  const prevValueRef = useRef<null | HTMLParagraphElement>(null);
+  const prevValueRef = useRef<null | string>(null);
 
   useEffect(() => {
-    if (props.value) prevValueRef.current!.innerText = props.value!.toString();
+    if (props.value) prevValueRef.current = props.value.toString();
   }, [props.value]);
 
   return (
     <Card className={classes.result}>
-      <div>
+      <div className={classes.result__content}>
         <h2>Previous value</h2>
-        {prevValueRef.current?.innerText || '?'}
+        <p>{prevValueRef.current || '?'}</p>
       </div>
 
-      <div>
+      <div className={classes.result__content}>
         <h2>Current value</h2>
-        <p ref={prevValueRef}>{props.value || '0'}</p>
+        <p>{props.value || '0'}</p>
       </div>
     </Card>
   );
 };
-export default Result;
+export { Result };
