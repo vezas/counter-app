@@ -7,9 +7,13 @@ import { Result } from 'components/result/Result';
 const App: React.FC = () => {
   const [currentValue, setCurrentValue] = useState<number | null>(null);
 
+  const onChange = (value: number | null) => {
+    setCurrentValue(value);
+  };
+
   return (
     <div className={classes.app}>
-      <Counter onChange={(value) => setCurrentValue(value)} />
+      <Counter onChange={onChange} value={currentValue} />
       <Result value={currentValue} />
     </div>
   );

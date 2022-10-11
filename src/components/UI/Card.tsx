@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from 'components/UI/Card.module.css';
 
-export interface CardProps {
+interface CardProps {
   className?: string | undefined;
   children?: React.ReactNode;
 }

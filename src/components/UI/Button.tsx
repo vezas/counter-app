@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from 'components/UI/Button.module.css';
 
-export interface ButtonProps {
+interface ButtonProps {
   className?: string;
   children: React.ReactNode;
   type: 'button';

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Card } from 'components/UI/Card';
 import classes from 'components/result/Result.module.css';
 
-export interface ResultProps {
+interface ResultProps {
   value: number | null;
   prevValueRef?: number | null;
 }
