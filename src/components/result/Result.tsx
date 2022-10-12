@@ -11,7 +11,11 @@ export const Result: React.FC<ResultProps> = ({ value }) => {
   const prevValueRef = useRef<null | string>(null);
 
   useEffect(() => {
-    if (value) prevValueRef.current = value.toString();
+    if (value) {
+      prevValueRef.current = value.toString();
+    } else {
+      prevValueRef.current = '0';
+    }
   }, [value]);
 
   return (
@@ -23,7 +27,7 @@ export const Result: React.FC<ResultProps> = ({ value }) => {
 
       <div className={classes.result__content}>
         <h2>Current value</h2>
-        <p>{value || '0'}</p>
+        <p>{value ?? '0'}</p>
       </div>
     </Card>
   );

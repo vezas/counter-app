@@ -9,11 +9,19 @@ interface CounterProps {
 
 export const Counter: React.FC<CounterProps> = ({ onChange, value }) => {
   const increaseValueHandler = () => {
-    onChange(value! + 1);
+    if (!value && value !== 0) {
+      onChange(1);
+    } else {
+      onChange(value + 1);
+    }
   };
 
   const decreaseValueHandler = () => {
-    onChange(value! - 1);
+    if (!value && value !== 0) {
+      onChange(1);
+    } else {
+      onChange(value - 1);
+    }
   };
 
   return (
