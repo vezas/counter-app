@@ -7,12 +7,12 @@ interface ResultProps {
   prevValueRef?: number | null;
 }
 
-const Result: React.FC<ResultProps> = (props) => {
+export const Result: React.FC<ResultProps> = ({ value }) => {
   const prevValueRef = useRef<null | string>(null);
 
   useEffect(() => {
-    if (props.value) prevValueRef.current = props.value.toString();
-  }, [props.value]);
+    if (value) prevValueRef.current = value.toString();
+  }, [value]);
 
   return (
     <Card className={classes.result}>
@@ -23,9 +23,8 @@ const Result: React.FC<ResultProps> = (props) => {
 
       <div className={classes.result__content}>
         <h2>Current value</h2>
-        <p>{props.value || '0'}</p>
+        <p>{value || '0'}</p>
       </div>
     </Card>
   );
 };
-export { Result };

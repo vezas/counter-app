@@ -3,15 +3,10 @@ import React from 'react';
 import classes from 'components/UI/Card.module.css';
 
 interface CardProps {
-  className?: string | undefined;
+  className?: string;
   children?: React.ReactNode;
 }
 
-const Card: React.FC<CardProps> = (props) => {
-  return (
-    <div className={`${classes.card} ${props.className}`}>{props.children}</div>
-  );
+export const Card: React.FC<CardProps> = ({ className, children }) => {
+  return <div className={`${classes.card} ${className}`}>{children}</div>;
 };
-
-// export default Card;
-export { Card };

@@ -4,10 +4,10 @@ import classes from 'App.module.css';
 import { Counter } from 'components/counter/Counter';
 import { Result } from 'components/result/Result';
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   const [currentValue, setCurrentValue] = useState<number | null>(null);
 
-  const onChange = (value: number | null) => {
+  const onChange = (value: number) => {
     setCurrentValue(value);
   };
 
@@ -18,5 +18,3 @@ const App: React.FC = () => {
     </div>
   );
 };
-
-export { App };

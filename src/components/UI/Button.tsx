@@ -6,19 +6,13 @@ interface ButtonProps {
   className?: string;
   children: React.ReactNode;
   type: 'button';
-  onChange: () => void | any;
+  onChange: () => void;
 }
 
-const Button: React.FC<ButtonProps> = (props) => {
+export const Button: React.FC<ButtonProps> = ({ onChange, type, children }) => {
   return (
-    <button
-      type={props.type}
-      onClick={props.onChange}
-      className={classes.button}
-    >
-      {props.children}
+    <button type={type} onClick={onChange} className={classes.button}>
+      {children}
     </button>
   );
 };
-
-export { Button };

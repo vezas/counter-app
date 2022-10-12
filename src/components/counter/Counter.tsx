@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Card } from 'components/UI/Card';
 import { Button } from 'components/UI/Button';
 import classes from 'components/counter/Counter.module.css';
 interface CounterProps {
-  onChange: (value: number | null) => void;
+  onChange: (value: number) => void;
   value: number | null;
 }
 
-const Counter: React.FC<CounterProps> = ({ onChange, value }) => {
+export const Counter: React.FC<CounterProps> = ({ onChange, value }) => {
   const increaseValueHandler = () => {
     onChange(value! + 1);
   };
@@ -37,5 +37,3 @@ const Counter: React.FC<CounterProps> = ({ onChange, value }) => {
     </Card>
   );
 };
-
-export { Counter };
