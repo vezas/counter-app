@@ -22,12 +22,12 @@ export const Result: React.FC<ResultProps> = ({ value }) => {
     <Card className={classes.result}>
       <div className={classes.result__content}>
         <h2>Previous value</h2>
-        <p>{prevValueRef.current || '?'}</p>
+        <p data-testid='prevValue'>{prevValueRef.current || '?'}</p>
       </div>
 
       <div className={classes.result__content}>
         <h2>Current value</h2>
-        <p>{value ?? '0'}</p>
+        <p data-testid='currValue'>{value ?? '0'}</p>
       </div>
     </Card>
   );

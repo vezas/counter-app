@@ -18,7 +18,7 @@ export const Counter: React.FC<CounterProps> = ({ onChange, value }) => {
 
   const decreaseValueHandler = () => {
     if (!value && value !== 0) {
-      onChange(1);
+      onChange(-1);
     } else {
       onChange(value - 1);
     }
