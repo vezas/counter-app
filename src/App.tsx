@@ -1,8 +1,20 @@
-import React from 'react';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
-  return <div className="App">{/* Counter */}</div>;
-}
+import classes from 'App.module.css';
+import { Counter } from 'components/counter/Counter';
+import { Result } from 'components/result/Result';
 
-export default App;
+export const App: React.FC = () => {
+  const [currentValue, setCurrentValue] = useState<number | null>(null);
+
+  const onChange = (value: number) => {
+    setCurrentValue(value);
+  };
+
+  return (
+    <div className={classes.app}>
+      <Counter onChange={onChange} value={currentValue} />
+      <Result value={currentValue} />
+    </div>
+  );
+};
