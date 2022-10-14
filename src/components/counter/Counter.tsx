@@ -27,18 +27,10 @@ export const Counter: React.FC<CounterProps> = ({ onChange, value }) => {
   return (
     <Card>
       <div>
-        <Button
-          className={classes.form__button}
-          type='button'
-          onChange={increaseValueHandler}
-        >
+        <Button className={classes.form__button} type='button' onChange={increaseValueHandler}>
           Increase
         </Button>
-        <Button
-          className={classes.form__button}
-          type='button'
-          onChange={decreaseValueHandler}
-        >
+        <Button className={classes.form__button} type='button' onChange={decreaseValueHandler}>
           Decrease
         </Button>
       </div>

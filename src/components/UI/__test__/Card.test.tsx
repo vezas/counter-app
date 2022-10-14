@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Card } from 'components/UI/Card';
 
 const content = <p>Test</p>;

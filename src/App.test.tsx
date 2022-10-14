@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { App } from 'App';
 
 describe('App component', () => {
@@ -7,10 +8,11 @@ describe('App component', () => {
     const buttonElement = screen.getByRole('button', {
       name: /Increase/i
     });
-    fireEvent.click(buttonElement);
 
-    const currParagraphElement = screen.getByTestId('currValue');
-    const prevParagraphElement = screen.getByTestId('prevValue');
+    const currParagraphElement = screen.getByText('0');
+    const prevParagraphElement = screen.getByText('?');
+
+    userEvent.click(buttonElement);
 
     expect(currParagraphElement.textContent).toBe('1');
     expect(prevParagraphElement.textContent).toBe('0');
@@ -21,28 +23,27 @@ describe('App component', () => {
     const buttonElement = screen.getByRole('button', {
       name: /Decrease/i
     });
-    fireEvent.click(buttonElement);
-    const currParagraphElement = screen.getByTestId('currValue');
-    const prevParagraphElement = screen.getByTestId('prevValue');
+    const currParagraphElement = screen.getByText('0');
+    const prevParagraphElement = screen.getByText('?');
+
+    userEvent.click(buttonElement);
+
     expect(currParagraphElement.textContent).toBe('-1');
     expect(prevParagraphElement.textContent).toBe('0');
   });
 
-  test('should render correct value (2) after click 2x decrease button and 4x increase button', () => {
+  test('should render correct value (5) after click 10x decrease button and 5x increase button', () => {
     render(<App />);
-    const decreaseButtonElement = screen.getByRole('button', {
-      name: /Decrease/i
-    });
-    const increaseButtonElement = screen.getByRole('button', {
-      name: /Increase/i
-    });
-    fireEvent.click(increaseButtonElement);
-    fireEvent.click(increaseButtonElement);
-    fireEvent.click(decreaseButtonElement);
-    fireEvent.click(decreaseButtonElement);
-    fireEvent.click(increaseButtonElement);
-    fireEvent.click(increaseButtonElement);
-    const paragraphElement = screen.getByTestId('currValue');
-    expect(paragraphElement.textContent).toBe('2');
+    const decreaseButtonElement = screen.getByRole('button', { name: /Decrease/i });
+    const increaseButtonElement = screen.getByRole('button', { name: /Increase/i });
+    const paragraphElement = screen.getByText('0');
+
+    for (let i = 0; i <= 10; i++) {
+      userEvent.click(increaseButtonElement);
+    }
+    for (let i = 0; i <= 5; i++) {
+      userEvent.click(decreaseButtonElement);
+    }
+    expect(paragraphElement.textContent).toBe('5');
   });
 });
