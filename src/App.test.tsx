@@ -18,7 +18,7 @@ describe('App component', () => {
     expect(prevParagraphElement.textContent).toBe('0');
   });
 
-  test('should render correct current value (-1) and previous value (0) after click increase button', () => {
+  test('should render correct current value (-1) and previous value (0) after click decrease button', () => {
     render(<App />);
     const buttonElement = screen.getByRole('button', {
       name: /Decrease/i
