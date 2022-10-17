@@ -3,11 +3,14 @@ import userEvent from '@testing-library/user-event';
 
 import { Button } from 'components/UI/Button';
 
-const mockFn = jest.fn();
-
-describe('Card component', () => {
+describe('Button component', () => {
   test('should execute fn passed by prop', () => {
-    render(<Button onChange={mockFn} type={'button'} children={'test'} />);
+    const mockFn = jest.fn();
+    render(
+      <Button onChange={mockFn} type='button'>
+        Test
+      </Button>
+    );
 
     const buttonElement = screen.getByRole('button');
     userEvent.click(buttonElement);
