@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { Button } from 'components/UI/Button';
 
 describe('Button component', () => {
-  test('should execute fn passed by prop', () => {
+  test('should execute proper fn passed by prop after click button', () => {
     const mockFn = jest.fn();
     render(
       <Button onChange={mockFn} type='button'>

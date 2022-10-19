@@ -5,7 +5,7 @@ const content = <p>Test</p>;
 
 describe('Card component', () => {
   test('should render correct content with correct styles', () => {
-    render(<Card children={content} />);
+    render(<Card>{content}</Card>);
 
     const paragraphElement = screen.getByText(/Test/i);
 

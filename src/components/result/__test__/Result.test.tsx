@@ -7,10 +7,4 @@ describe('Result component', () => {
     const paragraphElement = screen.getByTestId('currValue');
     expect(paragraphElement.textContent).toBe('5');
   });
-
-  test('should render 0 after refresh page', () => {
-    render(<Result value={null} />);
-    const paragraphElement = screen.getByTestId('currValue');
-    expect(paragraphElement.textContent).toBe('0');
-  });
 });
