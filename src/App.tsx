@@ -5,7 +5,7 @@ import { Counter } from 'components/counter/Counter';
 import { Result } from 'components/result/Result';
 
 export const App: React.FC = () => {
-  const [currentValue, setCurrentValue] = useState<number | null>(null);
+  const [currentValue, setCurrentValue] = useState(0);
 
   const onChange = (value: number) => {
     setCurrentValue(value);
